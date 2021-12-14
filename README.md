@@ -1,2 +1,2 @@
-# fixed_wodth_integers
+# fixed_width_integers
 C++11 fixed width integers porting for C++98
