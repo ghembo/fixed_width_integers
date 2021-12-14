@@ -2,9 +2,13 @@ name: Ubuntu
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
+      - main
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
+      - main
 
 env:
   BUILD_TYPE: Release
