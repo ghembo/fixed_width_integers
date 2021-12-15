@@ -25,7 +25,7 @@ TEST_CASE("Sizes") {
     }
 
     SUBCASE("ptr_t") {
-        REQUIRE(sizeof(nonstd::intptr_t) == (int)sizeof(void*));
-        REQUIRE(sizeof(nonstd::uintptr_t) == (int)sizeof(void*));
+        REQUIRE(sizeof(nonstd::intptr_t) == static_cast<int>(sizeof(void*)));
+        REQUIRE(sizeof(nonstd::uintptr_t) == static_cast<int>(sizeof(void*)));
     }
 }

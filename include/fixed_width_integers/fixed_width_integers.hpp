@@ -71,9 +71,11 @@ namespace nonstd
         typedef unsigned long long uintptr_t;
     };
 
-    typedef detail::same_size<signed char, signed short, signed int, signed long, signed long long, (int)sizeof(void*)>::type intptr_t;
-    typedef detail::same_size<unsigned char, unsigned short, unsigned int, unsigned long, unsigned long long, (int)sizeof(void*)>::type uintptr_t;
+    const int POINTER_SIZE = static_cast<int>(sizeof(void*));
 
-    NONSTD_STATIC_ASSERT(sizeof(intptr_t) == (int)sizeof(void*), "sizeof(int8_t) != 1");
-    NONSTD_STATIC_ASSERT(sizeof(uintptr_t) == (int)sizeof(void*), "sizeof(int8_t) != 1");
+    typedef detail::same_size<signed char, signed short, signed int, signed long, signed long long, POINTER_SIZE>::type intptr_t;
+    typedef detail::same_size<unsigned char, unsigned short, unsigned int, unsigned long, unsigned long long, POINTER_SIZE>::type uintptr_t;
+
+    NONSTD_STATIC_ASSERT(sizeof(intptr_t) == POINTER_SIZE, "sizeof(int8_t) != 1");
+    NONSTD_STATIC_ASSERT(sizeof(uintptr_t) == POINTER_SIZE, "sizeof(int8_t) != 1");
 }
